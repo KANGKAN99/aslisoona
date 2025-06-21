@@ -1,30 +1,37 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+// Importing all the page components
 import Home from "./pages/Home";
-import Score from "./pages/Score";
-import Cricket from "./pages/Cricket";
-import IPL from "./pages/IPL";
-import News from "./pages/News";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import Beaches from "./pages/Beaches";
+import Temples from "./pages/Temples";
+import Countries from "./pages/Countries";
 
 function App() {
   return (
     <Router>
       <div>
+        {/* Navigation Bar */}
         <nav>
-          <ul>
+          <ul style={{ display: "flex", listStyle: "none", gap: "15px" }}>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/score">Score</Link></li>
-            <li><Link to="/cricket">Cricket</Link></li>
-            <li><Link to="/ipl">IPL</Link></li>
-            <li><Link to="/news">News</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
+            <li><Link to="/beaches">Beaches</Link></li>
+            <li><Link to="/temples">Temples</Link></li>
+            <li><Link to="/countries">Countries</Link></li>
           </ul>
         </nav>
 
+        {/* Route Definitions */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/score" element={<Score />} />
-          <Route path="/cricket" element={<Cricket />} />
-          <Route path="/ipl" element={<IPL />} />
-          <Route path="/news" element={<News />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/beaches" element={<Beaches />} />
+          <Route path="/temples" element={<Temples />} />
+          <Route path="/countries" element={<Countries />} />
         </Routes>
       </div>
     </Router>
